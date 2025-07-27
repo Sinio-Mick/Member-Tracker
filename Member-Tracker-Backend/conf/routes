@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Club Methods
+POST    /Clubs                     controllers.Application.addClub()
+GET     /Clubs                     controllers.Application.getClubs()
+DELETE  /Clubs                     controllers.Application.deleteClub()
+
+# Members belonging to no clubs are automatically deleted
+POST    /Members                   controllers.Application.addMember()
+GET     /Members                   controllers.Application.getMembers()
+DELETE  /Members                   controllers.Application.deleteMember()
+
+POST    /Event                     controllers.Application.addEvent()
+DELETE  /Event                     controllers.Application.deleteEvent()
+
+POST    /Rank                      controllers.Application.addRank()
+DELETE  /Rank                      controllers.Application.deleteRank()
+
+# Link a clubs rank to a certain member
+POST    /MemberRank                controllers.Application.addRankToMember()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
